@@ -27,6 +27,13 @@
             width: 140px;
             text-align: right;
         }
+        .calculator button {
+            width: 30px; /* Set the desired width for buttons */
+        }
+
+        #c_button{
+            width: 74px;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +41,12 @@
 <div class="calculator">
     <div>
         <input type="text" id="display" placeholder="0">
+    </div>
+    <div>
+        <button id="c_button" onclick="clearDisplay()">C</button>
+        <button onclick="setOperator('P')">%</button>
+        <button onclick="setOperator('B')">-%</button>
+
     </div>
     <div>
         <button onclick="appendNumber('7')">7</button>
@@ -60,7 +73,7 @@
         <button onclick="setOperator('+')">+</button>
     </div>
     <div>
-        <button onclick="clearDisplay()">C</button>
+        
     </div>
 </div>
 
@@ -101,6 +114,14 @@
                 break;
             case '/':
                 result = prev / current;
+                break;
+
+            case 'P':
+                result = prev / 100 * current ;
+                break;
+                
+            case 'B':
+                result = current - (prev / 100 * current) ;
                 break;
             default:
                 return;
