@@ -22,6 +22,10 @@
         <button onclick="showAlert()"> = </button> 
         <h3 id ="result" class="result"> 0 </h3>
     </div>
+    <p></p>
+    <p>
+        <a href="javascript:void(0);" onclick="openCalculator()">Open Calculator</a>
+    </p>
 
 
     <script>
@@ -32,6 +36,10 @@
             //alert(n1 + " + " + n2 +" = " + (n1+n2));
             document.getElementById('result').textContent = " " + (n1+n2);
         };
+
+        function openCalculator() {
+            window.open('calculator.html', 'Calculator', 'width=300,height=400');
+        }
     </script>
 </body>
 </html>
